@@ -23,8 +23,8 @@ const infantSource: Record<InfantTab, string> = { meninas: "infantil-feminino", 
 
 function SmartImage({ src, alt, className, fallback = fallbackDetail }: { src: string; alt: string; className?: string; fallback?: string }) {
   const [imageSrc, setImageSrc] = useState(src);
-  return <img className={className} src={imageSrc} alt={alt} onError={() => setImageSrc(fallback)} />;
-}
+ return <img className={className} src={imageSrc} alt={alt} loading="lazy" onError={() => setImageSrc(fallback)} />;
+  }
 function Logo({ compact = false }: { compact?: boolean }) { return <Link href="/" className={compact ? "site-logo compact" : "site-logo"} aria-label="Dalva Bolos — voltar à Home"><SmartImage src={logo} fallback={fallbackDetail} alt="Dalva Bolos" /></Link>; }
 function HomeHeader() { return <header className="home-header" style={{ backgroundImage: `linear-gradient(90deg, rgba(244,240,232,.34), rgba(244,240,232,.06) 50%, rgba(244,240,232,.34)), url(${homeMoodboard})` }}><Logo /><div className="home-wordmark">Dalva Bolos<small>confeiteira</small></div><span className="header-edition">acervo autoral <i>·</i> 2026</span></header>; }
 function CoverTile({ category, index }: { category: GalleryCategory; index: number }) { return <Link href={`/${category.slug}`} className={`cover-tile cover-${index % 5}`}><SmartImage src={category.cover} alt={`Capa da categoria ${category.title}`} fallback={index % 2 ? fallbackDetail : fallbackHero} /><span className="cover-wash" /><span className="cover-info"><span className="cover-number">{String(index + 1).padStart(2, "0")}</span><strong>{category.title}</strong><ArrowUpRight size={17} /></span></Link>; }
