@@ -119,10 +119,6 @@ export const galleryCategories: GalleryCategory[] = [
       "https://i.ibb.co/dw44pXPb/fem12.jpg",
       "https://i.ibb.co/TMWHdd1H/fem9.jpg",
       "https://i.ibb.co/xqtyhxpK/fem7.jpg",
-      "https://i.ibb.co/wNn5rQqL/baby8.jpg",
-      "https://i.ibb.co/r2nLNh1B/baby5.jpg",
-      "https://i.ibb.co/F4dLDjJw/baby4.jpg",
-      "https://i.ibb.co/whfwHp4R/baby3.jpg"
     ]
   },
   {
