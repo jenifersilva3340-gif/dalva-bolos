@@ -86,8 +86,8 @@ export function CategoryPage({ category, infantTab, onSelectInfantTab }: { categ
   <ArrowLeft size={22} />
 </button>
 
-    <div className="lightbox-inner" onClick={(e) => e.stopPropagation()}>
-      <SmartImage src={photos[lightboxIndex].src} fallback={fallbackDetail} alt={`${pageTitle} — imagem ampliada`} />
+   <div className="lightbox-inner" onClick={(e) => e.stopPropagation()}>
+  <SmartImage key={photos[lightboxIndex].src} src={photos[lightboxIndex].src} fallback={fallbackDetail} alt={`${pageTitle} — imagem ampliada`} />
       <div className="lightbox-meta">
         <span>{String(lightboxIndex + 1).padStart(2, "0")} / {String(photos.length).padStart(2, "0")}</span>
         <span>{pageTitle}</span>
