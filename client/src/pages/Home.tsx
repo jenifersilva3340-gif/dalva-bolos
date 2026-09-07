@@ -74,16 +74,17 @@ export function CategoryPage({ category, infantTab, onSelectInfantTab }: { categ
     </button>
     
     <button 
-      className="lightbox-arrow left" 
-      onClick={(e) => { 
-        e.preventDefault(); 
-        e.stopPropagation(); 
-        setLightboxIndex((prev) => (prev !== null ? (prev - 1 + photos.length) % photos.length : 0)); 
-      }} 
-      aria-label="Imagem anterior"
-    >
-      <ArrowLeft size={22} />
-    </button>
+  type="button"
+  className="lightbox-arrow left" 
+  onClick={(e) => { 
+    e.preventDefault(); 
+    e.stopPropagation(); 
+    setLightboxIndex((prev) => (prev !== null ? (prev - 1 + photos.length) % photos.length : 0)); 
+  }} 
+  aria-label="Imagem anterior"
+>
+  <ArrowLeft size={22} />
+</button>
 
     <div className="lightbox-inner" onClick={(e) => e.stopPropagation()}>
       <SmartImage src={photos[lightboxIndex].src} fallback={fallbackDetail} alt={`${pageTitle} — imagem ampliada`} />
@@ -94,6 +95,7 @@ export function CategoryPage({ category, infantTab, onSelectInfantTab }: { categ
     </div>
 
     <button 
+      type="button"
       className="lightbox-arrow right" 
       onClick={(e) => { 
         e.preventDefault(); 
